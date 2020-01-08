@@ -36,9 +36,9 @@ app.use('/admin', admin);
 app.use('/tentor', tentor);
 app.use('/siswa', siswa);
 app.use('/wali', wali);
-// app.get('*', function (req, res) {
-//   res.redirect('/');
-// });
+app.get('*', function (req, res) {
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
