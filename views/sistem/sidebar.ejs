@@ -1,0 +1,41 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-code"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3"><%= title %></div>
+    </a>
+
+    <% if(menu.length){
+        for(var i = 0;i < menu.length;i++) { %>
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        <%= menu[i].menu %>
+    </div>
+
+    <% if(menu[i].sub_menu.length){
+        for(var j = 0; j < menu[i].sub_menu.length; j++){ %>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link" href="<%= menu[i].sub_menu[j].url %>">
+            <i class="<%= menu[i].sub_menu[j].icon %>"></i>
+            <span><%= menu[i].sub_menu[j].title %></span></a>
+    </li>
+
+    <% 
+        }
+    } %>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <%  }
+    } %>
+
+</ul>
+<!-- End of Sidebar -->
