@@ -21,7 +21,11 @@
         for(var j = 0; j < menu[i].sub_menu.length; j++){ %>
 
     <!-- Nav Item - Dashboard -->
+    <% if(title == menu[i].sub_menu[j].title){ %>
+    <li class="nav-item active">
+        <% }else{ %>
     <li class="nav-item">
+        <% } %>
         <a class="nav-link" href="<%= menu[i].sub_menu[j].url %>">
             <i class="<%= menu[i].sub_menu[j].icon %>"></i>
             <span><%= menu[i].sub_menu[j].title %></span></a>
@@ -38,7 +42,7 @@
     } %>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="/auth/out">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-fw fa-sign-out-alt"></i>
             <span>Log Out</span>
         </a>

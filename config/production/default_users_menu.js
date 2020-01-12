@@ -27,6 +27,16 @@ exports.seed = function (knex) {
           id: 5,
           menu: 'Wali',
           created_at: new Date()
+        },
+        {
+          id: 6,
+          menu: 'Menu',
+          created_at: new Date()
+        },
+        {
+          id: 7,
+          menu: 'Menu Admin',
+          created_at: new Date()
         }
       ]);
     });

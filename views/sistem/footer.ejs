@@ -33,24 +33,40 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Apakah yakin ingin keluar?.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="/auth/out">Yakin</a>
             </div>
         </div>
     </div>
 </div>
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.minj.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <!-- Bootstrap core JavaScript-->
-<script src="sistem/sb-admin/vendor/jquery/jquery.min.js"></script>
-<script src="sistem/sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<%= sumber; %>/sb-admin/vendor/jquery/jquery.min.js"></script>
+<script src="<%= sumber; %>/sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="sistem/sb-admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<%= sumber; %>/sb-admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="sistem/sb-admin/js/sb-admin-2.min.js"></script>
+<script src="<%= sumber; %>/sb-admin/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="<%= sumber; %>/sb-admin/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<%= sumber; %>/sb-admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<%= sumber; %>/sb-admin/js/demo/datatables-demo.js"></script>
+
 
 </body>
 

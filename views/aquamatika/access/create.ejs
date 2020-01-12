@@ -1,0 +1,49 @@
+<% include ../../sistem/header.ejs %>
+<% include ../../sistem/sidebar.ejs %>
+<% include ../../sistem/topbar.ejs %>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <div class="container">
+        <br>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Aquamatika</a></li>
+            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/admin/menu">Menu</a></li>
+            <li class="breadcrumb-item"><a href="/admin/access">Access Menu</a></li>
+            <li class="breadcrumb-item active">Create Access Menu</li>
+        </ol>
+        <br>
+        <h3>Add Access Menu</h3>
+        <% if(alert.message != '') { %>
+        <div class="alert alert-<%= alert.status %>">
+            <%= alert.message %>
+        </div>
+        <% } %>
+        <form action="/admin/access/create" method="post">
+            <div class="form-group">
+                <label for="role">User :</label>
+                <select name="role" id="role" class="form-control" required>
+                    <option value=""> </option>
+                    <% for(let i = 0; i < role.length; i++){ %>
+                    <option value="<%= role[i].id %>"><%= role[i].name %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="menu">Menu :</label>
+                <select name="menu" id="menu" class="form-control" required>
+                    <option value=""> </option>
+                    <% for(let i = 0; i < dataMenu.length; i++){ %>
+                    <option value="<%= dataMenu[i].id %>"><%= dataMenu[i].menu %></option>
+                    <% } %>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+<% include ../../sistem/footer.ejs %>

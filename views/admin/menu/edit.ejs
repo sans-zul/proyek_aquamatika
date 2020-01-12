@@ -1,0 +1,28 @@
+<% include ../../sistem/header.ejs %>
+<% include ../../sistem/sidebar.ejs %>
+<% include ../../sistem/topbar.ejs %>
+<div class="container">
+    <br>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Aquamatika</a></li>
+        <li class="breadcrumb-item"><a href="/admin">Dashbpard</a></li>
+        <li class="breadcrumb-item"><a href="/admin/menu">Menu</a></li>
+        <li class="breadcrumb-item"><a href="/admin/menu">Menu Management</a></li>
+        <li class="breadcrumb-item active">Edit Menu</li>
+    </ol>
+    <br>
+    <h3>Edit Menu</h3>
+    <% if(alert.message != '') { %>
+    <div class="alert alert-<%= alert.status %>">
+        <%= alert.message %>
+    </div>
+    <% } %>
+    <form action="/admin/menu/<%= data[0].id %>/edit" method="post">
+        <div class="form-group">
+            <label for="name"> Name:</label>
+            <input type="text" value="<%= data[0].menu %>" class="form-control" name="name" id="name">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+<% include ../../sistem/footer.ejs %>

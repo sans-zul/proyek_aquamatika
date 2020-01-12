@@ -1,4 +1,4 @@
-const client = require('./connection');
+const client = require('../connection');
 
 async function getMenu(role_id) {
     let results = [];

@@ -1,0 +1,64 @@
+<% include ../../sistem/header.ejs %>
+<% include ../../sistem/sidebar.ejs %>
+<% include ../../sistem/topbar.ejs %>
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <div class="container">
+        <br>
+        <% if(alert.message != '') { %>
+        <div class="alert alert-<%= alert.status %>">
+            <%= alert.message %>
+        </div>
+        <% } %>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Aquamatika</a></li>
+            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/admin/menu">Menu</a></li>
+            <li class="breadcrumb-item active">Access Menu</li>
+        </ol>
+        <br>
+
+        <a href="/admin/access/create" class="btn btn-primary mb-3">Add New Access Menu</a>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>User</th>
+                                <th>Menu</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% var no = 1; %>
+                            <% for(let i = 0; i < myData.length; i++){ %>
+                            <tr>
+                                <td><%= no %></td>
+                                <td><%= myData[i].role %></td>
+                                <td><%= myData[i].menu %></td>
+                                <td>
+                                    <a href="/admin/access/<%= myData[i].id %>/edit"
+                                        class="badge badge-success">edit</a>
+                                    <a href="/admin/access/<%= myData[i].id %>/delete"
+                                        class="badge badge-danger">hapus</a>
+                                </td>
+                            </tr>
+                            <% no++; %>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+
+<% include ../../sistem/footer.ejs %>

@@ -1,0 +1,35 @@
+<% include ../../sistem/header.ejs %>
+<% include ../../sistem/sidebar.ejs %>
+<% include ../../sistem/topbar.ejs %>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <div class="container">
+        <br>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/aquamatika">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/aquamatika/menu">Menu</a></li>
+            <li class="breadcrumb-item"><a href="/aquamatika/menu">Menu Management</a></li>
+            <li class="breadcrumb-item active">Create Menu</li>
+        </ol>
+        <br>
+        <h3>Add Menu</h3>
+        <% if(alert.message != '') { %>
+        <div class="alert alert-<%= alert.status %>">
+            <%= alert.message %>
+        </div>
+        <% } %>
+        <form action="/aquamatika/menu/create" method="post">
+            <div class="form-group">
+                <label for="name"> Name :</label>
+                <input type="text" class="form-control" name="name" id="name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+<% include ../../sistem/footer.ejs %>

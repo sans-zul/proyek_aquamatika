@@ -3,7 +3,8 @@ exports.up = function (knex, Promise) {
         id SERIAL PRIMARY KEY NOT NULL,
         menu TEXT NOT NULL,
         created_at TIMESTAMP
-      )`
+      );
+      ALTER SEQUENCE users_menu_id_seq RESTART WITH 8 INCREMENT BY 1;`
     return knex.raw(createQuery)
 }
 

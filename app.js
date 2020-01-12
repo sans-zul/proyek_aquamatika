@@ -4,6 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const flash = require('connect-flash');
+const session = require('express-session');
+
 const landing_page = require('./routes/index');
 const auth = require('./routes/auth');
 const aquamatika = require('./routes/aquamatika');
@@ -11,6 +14,8 @@ const admin = require('./routes/admin');
 const tentor = require('./routes/tentor');
 const siswa = require('./routes/siswa');
 const wali = require('./routes/wali');
+
+const isSession = require('./controller/isSession');
 
 const client = require('./models/connection');
 client.connect();
@@ -21,6 +26,16 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(cookieParser('keyboard cat'));
+app.use(session({
+  secret: 'sans-dinda-icha',
+  saveUninitialized: true,
+  resave: true,
+  cookie: {
+    maxAge: 60000
+  }
+}));
+app.use(flash());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
